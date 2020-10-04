@@ -6,9 +6,15 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav ">
-          <router-link to="/register" class="nav-item nav-link mr-auto" >Регистрация</router-link>
-        <router-link to="/login" class="nav-item nav-link ">Войти</router-link>
+        <div class="navbar-nav">
+          <div v-if="!loggedIn">
+            <router-link to="/register" class="nav-item nav-link mr-auto">Регистрация</router-link>
+            <router-link to="/login" class="nav-item nav-link">Войти</router-link>
+            </div> 
+            <div v-else>
+              <router-link to="/profile" class="nav-item nav-link">Профиль</router-link>
+              <router-link to="/logout" class="nav-item nav-link">Выйти</router-link>
+            </div>          
         </div>
       </div>
       
@@ -17,7 +23,16 @@
   </div>
 </template>
 
+<script>
+export default {
+  computed: {
+    loggedIn() {
+      return this.$store.getters.loggedIn
+    }
+  }
+}
+</script>
 
-<style>
+<style scoped>
 
 </style>
