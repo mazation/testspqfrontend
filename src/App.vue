@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="container">
     <nav class="navbar navbar-light navbar-expand-lg">
-      <span class="navbar-brand">Logo</span>
+      <router-link to="/" class="navbar-brand">Logo</router-link>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -17,7 +17,6 @@
             </div>          
         </div>
       </div>
-      
     </nav>
     <router-view />
   </div>
